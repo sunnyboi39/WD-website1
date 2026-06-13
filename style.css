@@ -1,0 +1,305 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	color-scheme: light;
+	--bg: #eef6ff;
+	--bg-soft: #dcecff;
+	--panel: rgba(255, 255, 255, 0.78);
+	--panel-border: rgba(95, 149, 224, 0.22);
+	--text: #14304f;
+	--muted: #4e6985;
+	--accent: #7db6ff;
+	--accent-strong: #3f79cc;
+	--shadow: 0 20px 50px rgba(85, 125, 176, 0.16);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--text);
+	background:
+		radial-gradient(circle at top, rgba(125, 182, 255, 0.3), transparent 28%),
+		linear-gradient(180deg, #f7fbff 0%, var(--bg) 45%, #e6f1ff 100%);
+	line-height: 1.6;
+	min-height: 100vh;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background-image: linear-gradient(rgba(65, 114, 185, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(65, 114, 185, 0.06) 1px, transparent 1px);
+	background-size: 72px 72px;
+	opacity: 0.6;
+}
+/* ::before is a CSS pseudo-element. It creates a virtual element that appears before the selected element’s content,
+so you can style or insert decorative content without changing the HTML. In this stylesheet, body::before adds the subtle
+grid overlay on top of the page background. */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+main,
+.site-header,
+.site-footer {
+	width: min(1120px, calc(100% - 32px));
+	margin: 0 auto;
+}
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 24px;
+	padding: 28px 0 18px;
+}
+
+.brand h1,
+.hero h2,
+.panel h3,
+.project-card h4 {
+	margin: 0;
+	line-height: 1.1;
+}
+
+.eyebrow,
+.panel-label,
+.card-label {
+	margin: 0 0 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: var(--accent-strong);
+}
+
+.site-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+	justify-content: flex-end;
+}
+
+.site-nav a {
+	color: var(--muted);
+	font-size: 0.95rem;
+	transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+	color: var(--text);
+}
+
+main {
+	padding: 18px 0 56px;
+	display: grid;
+	gap: 24px;
+}
+
+.hero,
+.info-grid,
+.projects,
+.contact {
+	position: relative;
+	z-index: 1;
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: 1.8fr 1fr;
+	gap: 24px;
+	align-items: stretch;
+	padding: 34px;
+	border: 1px solid var(--panel-border);
+	border-radius: 28px;
+	background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(229, 240, 255, 0.92));
+	box-shadow: var(--shadow);
+}
+
+.hero h2 {
+	font-size: clamp(2.4rem, 5vw, 4.6rem);
+	max-width: 12ch;
+}
+
+.hero-copy,
+.panel p,
+.project-card p,
+.contact p,
+.site-footer p,
+.hero-card li {
+	color: var(--muted);
+}
+
+.hero-copy {
+	max-width: 60ch;
+	font-size: 1.02rem;
+	margin: 18px 0 0;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 26px;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.9rem 1.2rem;
+	border-radius: 999px;
+	border: 1px solid transparent;
+	font-weight: 700;
+	transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+	transform: translateY(-1px);
+}
+
+.button-solid {
+	background: linear-gradient(135deg, #7db6ff, #4f8fe0);
+	color: #ffffff;
+}
+
+.button-ghost {
+	border-color: var(--panel-border);
+	background: rgba(125, 182, 255, 0.14);
+}
+
+.hero-card,
+.panel,
+.project-card,
+.contact {
+	border: 1px solid var(--panel-border);
+	border-radius: 24px;
+	background: var(--panel);
+	box-shadow: var(--shadow);
+}
+
+.hero-card {
+	padding: 22px;
+	align-self: end;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(222, 236, 252, 0.95));
+}
+
+.hero-card ul {
+	margin: 0;
+	padding-left: 18px;
+	display: grid;
+	gap: 12px;
+}
+
+.info-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.panel,
+.contact {
+	padding: 28px;
+}
+
+.chip-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 18px;
+}
+
+.chip-list span {
+	padding: 0.55rem 0.9rem;
+	border: 1px solid var(--panel-border);
+	border-radius: 999px;
+	background: rgba(125, 182, 255, 0.12);
+	color: var(--text);
+}
+
+.projects {
+	display: grid;
+	gap: 18px;
+}
+
+.section-heading {
+	display: grid;
+	gap: 6px;
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.project-card {
+	padding: 22px;
+	min-height: 180px;
+}
+
+.contact {
+	display: grid;
+	gap: 14px;
+	justify-items: start;
+}
+
+.site-footer {
+	padding: 0 0 28px;
+	text-align: center;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+	.site-header,
+	.hero,
+	.info-grid,
+	.project-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.site-header {
+		display: grid;
+	}
+
+	.site-nav {
+		justify-content: flex-start;
+	}
+
+	.hero h2 {
+		max-width: none;
+	}
+}
+
+@media (max-width: 640px) {
+	main,
+	.site-header,
+	.site-footer {
+		width: min(100% - 20px, 1120px);
+	}
+
+	.hero,
+	.panel,
+	.contact {
+		padding: 22px;
+		border-radius: 20px;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+	}
+
+	.button {
+		width: 100%;
+	}
+}

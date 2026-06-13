@@ -3,11 +3,87 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Page Title</title>
+	<meta name="description" content="A simple blue-themed portfolio for showcasing coding projects.">
+	<title>Sunday's Portfolio</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hola</h1>
+	<header class="site-header">
+		<div class="brand">
+			<p class="eyebrow">Portfolio</p>
+			<h1>Sunday's Portfolio</h1>
+		</div>
+		<nav class="site-nav" aria-label="Primary">
+			<a href="#skills">Skills</a>
+			<a href="#projects">Projects</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div>
+				<p class="hero-copy">
+					Welcome to my portfolio! I'm an aspiring software developer. Here you can see some of my coding projects.
+				</p>
+			</div>
+		</section>
+
+		<section class="info-grid">
+
+			<article class="panel" id="skills">
+				<p class="panel-label">Skills</p>
+				<h3>Languages I use.</h3>
+				<div class="chip-list" aria-label="Programming languages">
+					<span>HTML</span>
+					<span>CSS</span>
+					<span>JavaScript</span>
+					<span>Java</span>
+					<span>Python</span>
+					<span>C</span>
+				</div>
+			</article>
+		</section>
+
+		<section class="projects" id="projects">
+			<div class="section-heading">
+				<p class="panel-label">Projects</p>
+				<h3>Selected work</h3>
+			</div>
+			<div class="project-grid">
+				<article class="project-card">
+					<h4>ATM- python</h4>
+					<a class="button button-ghost" href="https://codespaces.new/sunnyboi39/ATM">An ATM that starts with 1000 in your account.</a>
+
+				</article>
+				<article class="project-card">
+					<h4>Encrypt/Decrypt- python</h4>
+					<a class="button button-ghost" href="https://codespaces.new/sunnyboi39/encrypt_decrypt">Encrypts and decrypts a simple message.</a>
+				</article>
+				<article class="project-card">
+					<h4>Chichi Wellness Bot- python</h4>
+					<a class="button button-ghost" href="https://codespaces.new/sunnyboi39/Chichi-Wellness-Bot">Simple chatbot that can be used for wellness checks.</a>
+				</article>
+			</div>
+		</section>
+
+		<section class="contact panel" id="contact">
+			<p class="panel-label">Contact Me</p>
+			
+	
+			<div class="hero-actions">
+				<a class="button button-solid" href="mailto:smiths109@montclair.edu?subject=Portfolio%20Inquiry">Email me</a>
+				<button class="button button-solid" id="copy-email" type="button">Copy email</button>
+				<a class="button button-solid" href="https://github.com/sunnyboi39" target="_blank" rel="noreferrer noopener">GitHub</a>
+				<a class="button button-solid" href="https://www.linkedin.com/in/sunday-smith-a3108b292" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+			</div>
+			
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p>&copy; <span id="year"></span> Sunday's Portfolio</p>
+	</footer>
 	<script src="script.js"></script>
 </body>
 </html>
