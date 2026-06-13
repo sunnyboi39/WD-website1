@@ -1,2 +1,2 @@
 # WD-website1
-first project for Web Dev summer course
+first project for Web Dev summer course. portfolio
