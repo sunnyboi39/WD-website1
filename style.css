@@ -207,16 +207,31 @@ main {
 	gap: 24px;
 }
 
+#skills {
+	grid-column: 1 / -1;
+}
+
 .panel,
 .contact {
 	padding: 28px;
 }
 
 .chip-list {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
 	gap: 12px;
 	margin-top: 18px;
+}
+
+.chip-icon {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: contain;
+	padding: 0.65rem;
+	border: 1px solid var(--panel-border);
+	border-radius: 18px;
+	background: rgba(125, 182, 255, 0.12);
 }
 
 .chip-list span {
