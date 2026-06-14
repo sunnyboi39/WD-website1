@@ -63,7 +63,6 @@ main,
 }
 
 .brand h1,
-.hero h2,
 .panel h3,
 .project-card h4 {
 	margin: 0;
@@ -71,14 +70,19 @@ main,
 }
 
 .eyebrow,
-.panel-label,
-.card-label {
+.panel-label {
 	margin: 0 0 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.18em;
 	font-size: 0.72rem;
 	font-weight: 700;
 	color: var(--accent-strong);
+}
+
+.panel-label {
+	font-weight: 600;
+	opacity: 0.8;
+	color: #ffffff;
 }
 
 .site-nav {
@@ -115,34 +119,49 @@ main {
 
 .hero {
 	display: grid;
-	grid-template-columns: 1.8fr 1fr;
+	grid-template-columns: 1fr;
 	gap: 24px;
-	align-items: stretch;
+	place-items: center;
+	text-align: center;
 	padding: 34px;
 	border: 1px solid var(--panel-border);
 	border-radius: 28px;
-	background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(229, 240, 255, 0.92));
+	background: url("assets/bluebg.jpg") center/cover no-repeat;
+	overflow: hidden;
 	box-shadow: var(--shadow);
 }
 
-.hero h2 {
-	font-size: clamp(2.4rem, 5vw, 4.6rem);
-	max-width: 12ch;
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(160deg, rgba(10, 31, 58, 0.22), rgba(10, 31, 58, 0.08));
+	z-index: -1;
 }
 
-.hero-copy,
+.hero > * {
+	position: relative;
+	z-index: 1;
+}
+
 .panel p,
 .project-card p,
 .contact p,
-.site-footer p,
-.hero-card li {
+.site-footer p {
 	color: var(--muted);
 }
 
 .hero-copy {
-	max-width: 60ch;
+	max-width: none;
 	font-size: 1.02rem;
 	margin: 18px 0 0;
+	color: #f6fbff;
+	text-shadow: 0 2px 12px rgba(10, 31, 58, 0.35);
+}
+
+.hero h1 {
+	color: #ffffff;
+	text-shadow: 0 3px 16px rgba(10, 31, 58, 0.45);
 }
 
 .hero-actions {
@@ -176,9 +195,9 @@ main {
 .button-ghost {
 	border-color: var(--panel-border);
 	background: rgba(125, 182, 255, 0.14);
+	margin-top: 12px;
 }
 
-.hero-card,
 .panel,
 .project-card,
 .contact {
@@ -186,19 +205,6 @@ main {
 	border-radius: 24px;
 	background: var(--panel);
 	box-shadow: var(--shadow);
-}
-
-.hero-card {
-	padding: 22px;
-	align-self: end;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(222, 236, 252, 0.95));
-}
-
-.hero-card ul {
-	margin: 0;
-	padding-left: 18px;
-	display: grid;
-	gap: 12px;
 }
 
 .info-grid {
@@ -266,7 +272,32 @@ main {
 .contact {
 	display: grid;
 	gap: 14px;
-	justify-items: start;
+	justify-items: center;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	background: url("assets/bluebg.jpg") center/cover no-repeat;
+}
+
+.contact p {
+	color: #ffffff;
+}
+
+.contact::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(160deg, rgba(10, 31, 58, 0.34), rgba(10, 31, 58, 0.18));
+	z-index: -1;
+}
+
+.contact > * {
+	position: relative;
+	z-index: 1;
+}
+
+.contact .hero-actions {
+	justify-content: center;
 }
 
 .site-footer {
@@ -291,9 +322,6 @@ main {
 		justify-content: flex-start;
 	}
 
-	.hero h2 {
-		max-width: none;
-	}
 }
 
 @media (max-width: 640px) {
