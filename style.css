@@ -131,8 +131,8 @@ main {
 	box-shadow: var(--shadow);
 }
 
-.hero,
-.contact {
+
+.hero {
 	background: url("assets/bluebg.jpg") center/cover no-repeat;
 }
 
@@ -275,6 +275,7 @@ main {
 	text-align: center;
 	position: relative;
 	overflow: hidden;
+	background: url("assets/bluebg.jpg") center/cover no-repeat;
 }
 
 .contact p {
